@@ -838,6 +838,12 @@ pre[data-line] {
 .reveal .white-card ul ul {
   margin-left: 1.5em;
 }
+.white-card ul.center {
+  width: 100%;
+}
+.white-card ul.center li {
+  text-align: center;
+}
 .white-card table thead {
   border-bottom: 1px solid #13769d;
 }
