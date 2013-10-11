@@ -1,0 +1,20 @@
+//////////////////////////////
+// Icon Component Mixins
+//////////////////////////////
+
+//////////////////////////////
+// icon Component Default Variables
+$icon-inline-list-extend: true !default;
+//////////////////////////////
+
+@mixin icon-inline-list($extend: $icon-base-extend) {
+  @if $extend {
+    @extend %icon-inline-list;
+  }
+  @else {
+    display: inline-block;
+    margin-right: 0.25em;
+    font-size: ms(2);
+    @include transform3d( translateY(4px) );
+  }
+}

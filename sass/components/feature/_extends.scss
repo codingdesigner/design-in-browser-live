@@ -1,0 +1,13 @@
+//////////////////////////////
+// Feature Component Extendable Classes
+//////////////////////////////
+
+$feature-extendables-extended: false !default;
+
+@if not ($feature-extendables-extended) {
+  %hero-caption {
+    @include hero-caption(false);
+  }
+}
+
+$feature-extendables-extended: true;

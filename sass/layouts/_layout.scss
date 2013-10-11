@@ -1,0 +1,73 @@
+//////////////////////////////
+// Layouts
+// Add your layouts here.
+//////////////////////////////
+
+[class*="container"] {
+  @include clearfix();
+  // @include background-grid();
+}
+
+
+@include breakpoint($bp-press-2col ($bp-multicol - 1)) {
+  .wrapper-a {
+    @include clearfix();
+  }
+  .testimonials {
+    @include grid-span(1, 1);
+  }
+  .press-room {
+    @include grid-span(1, 2);
+  }
+  .social-media {
+    @include grid-span(1, 2);
+    clear: right;
+  }
+}
+@include breakpoint($bp-multicol ($bp-golden-3 - 1)) {
+  .slideshow {
+    @include grid-span(1, 1);
+  }
+  .wrapper-a {
+    @include grid-span(1, 2);
+  }
+  // .testimonials {
+  //   @include grid-span(1, 2);
+  // }
+  // .press-room {
+  //   @include grid-span(1, 2);
+  //   clear: right;
+  // }
+  // .social-media {
+  //   @include grid-span(1, 2);
+  //   clear: right;
+  // }
+  .bird-feed {
+    @include grid-span(1, 1);
+    clear: left;
+  }
+}
+@include breakpoint($bp-golden-3) {
+  .slideshow {
+    @include grid-span(1, 1);
+  }
+  .wrapper-a {
+    @include grid-span(2, 2);
+  }
+  @include layout($grid: 1.61803 1) {
+    .testimonials {
+        @include grid-span(1, 1);
+    }
+    .press-room {
+      @include grid-span(1, 2);
+    }
+    .social-media {
+      @include grid-span(2, 1);
+      clear: both;
+    }
+  }
+  .bird-feed {
+    @include grid-span(1, 1);
+    clear: left;
+  }
+}

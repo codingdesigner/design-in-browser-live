@@ -1,0 +1,21 @@
+// Images -------------------------------------------------------------- */
+
+img {
+  @extend %constrain-to-parent;
+  height: auto;
+  vertical-align: text-bottom;
+  @if $init-type != normalize {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+  }
+  border: 0.25em solid rgba($white, 0.5);
+  margin-bottom: 1em;
+  // &.left {
+  //   float: left;
+  //   margin: $kit-baseline-half $kit-gutter $kit-baseline-half 0;
+  // }
+  // &.right {
+  //   float: right;
+  //   margin: $kit-baseline-half 0 $kit-baseline-half $kit-gutter;
+  // }
+}

@@ -1,0 +1,13 @@
+//////////////////////////////
+// Bird-feed Component Extendable Classes
+//////////////////////////////
+
+$bird-feed-extendables-extended: false !default;
+
+@if not ($bird-feed-extendables-extended) {
+  %bird-feed {
+    @include bird-feed(false);
+  }
+}
+
+$bird-feed-extendables-extended: true;

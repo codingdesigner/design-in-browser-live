@@ -1,0 +1,50 @@
+//////////////////////////////
+// Icon Component
+//
+// The partial and folder structure for this component should be as follows:
+// _icon.scss
+// icon (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "icon/mixins";
+@import "icon/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--icon set to `true` will output the CSS selectors for IconComponent
+$output-selectors--icon: true !default;
+@if $output-selectors and $output-selectors--icon {
+//////////////////////////////
+
+//////////////////////////////
+// @{icon}
+// Styling for Icon Component
+
+// {icon}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{icon--list}
+// List styling for Icon Component
+
+// {icon--list}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{icon--button}
+// Button styling for Icon Component
+
+// {icon--button}@
+//////////////////////////////
+
+}

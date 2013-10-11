@@ -1,0 +1,41 @@
+//////////////////////////////
+// Link Element Extendable Classes
+//////////////////////////////
+
+$link-extendables-extended: false !default;
+
+@if not ($link-extendables-extended) {
+  %link-colors-extend {
+    @include set-link-colors($extend: false);
+  }
+
+  %link-borders-extend {
+    @include set-border-links($extend: false);
+  }
+
+  %link-unset-borders-extend {
+    @include unset-border-links(false);
+  }
+
+  %links-extend {
+    @extend %link-colors-extend;
+    @extend %link-borders-extend;
+  }
+
+  %nav-links {
+    @include set-link-colors($blue-slate, $orange, $orange, $blue-slate, $blue-slate, $extend: false);
+  }
+
+  %links-white {
+    padding: 0 0.5em;
+    border-bottom: 1px solid rgba(tint($blue-slate, 20%), 0.5);
+    @include set-link-colors($cool-white, $white, $white, $cool-white, $cool-white, $extend: false);
+  }
+
+  %links-dark-blue {
+    @include set-link-colors($blue-dark, $white, $white, $blue-dark, $blue-dark, $extend: false);
+    // @include link-colors($blue-dark, $white, $white, $blue-dark, $blue-dark);
+  }
+}
+
+$link-extendables-extended: true;

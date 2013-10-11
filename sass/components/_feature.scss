@@ -1,0 +1,81 @@
+//////////////////////////////
+// Feature Component
+//
+// The partial and folder structure for this component should be as follows:
+// _feature.scss
+// feature (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "feature/mixins";
+@import "feature/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--feature set to `true` will output the CSS selectors for FeatureComponent
+$output-selectors--feature: true !default;
+@if $output-selectors and $output-selectors--feature {
+//////////////////////////////
+
+//////////////////////////////
+// @{feature}
+// Styling for Feature Component
+.hero {
+  position: relative;
+  margin: 0 0 0 0;
+  figure {
+    position: relative;
+    overflow: hidden;
+  }
+  img {
+    border: none;
+  }
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    padding: 0.2em 0 0;
+    width: 100%;
+    text-shadow: rgba($white, 0.3) 1px 1px 0;
+  }
+  h1 {
+    @include hero-caption(false);
+    min-width: 66%;
+    color: $orange-dark;
+    font-weight: 600;
+    font-size: ms(0);
+    line-height: 1.2;
+    @include breakpoint($bp-slider-overlay) {
+      min-width: 33%;
+      line-height: $base-line-height;
+      font-size: ms(2);
+    }
+  }
+  p {
+    @include hero-caption(false);
+    min-width: 80%;
+    line-height: 1.1;
+    @include breakpoint($bp-slider-overlay) {
+      min-width: 66%;
+      line-height: $base-line-height;
+    }
+  }
+}
+// {feature}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{feature--hero}
+// Hero styling for Feature Component
+
+// {feature--hero}@
+//////////////////////////////
+
+}

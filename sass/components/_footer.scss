@@ -1,0 +1,90 @@
+//////////////////////////////
+// Footer Component
+//
+// The partial and folder structure for this component should be as follows:
+// _footer.scss
+// footer (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "footer/mixins";
+@import "footer/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--footer set to `true` will output the CSS selectors for FooterComponent
+$output-selectors--footer: true !default;
+@if $output-selectors and $output-selectors--footer {
+//////////////////////////////
+
+//////////////////////////////
+// @{footer}
+// Styling for Footer Component
+#footer {
+  margin-top: em($base-line-height * 2);
+  padding-top: em($base-line-height);
+  padding-bottom: em($base-line-height * 2);
+  border-top: 0.5em solid $blue;
+  background: $orange;
+  color: $white;
+  a {
+    @extend %links-dark-blue;
+  }
+  .search {
+    @extend %vertical-separation;
+    > h1 {
+      @extend %a11y-hidden-base-extend;
+    }
+    form {
+      position: relative;
+    }
+    input {
+      position: relative;
+      z-index: 1;
+      margin-right: -50px;
+      padding: 3px 50px 3px 3px;
+      min-height: 44px;
+      width: 100%;
+      border: 1px solid $gray-light;
+      background: $white;
+    }
+    button {
+      position: relative;
+      z-index: 2;
+      float: right;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-left: 1px solid $gray-light;
+      background: $gray-trans;
+      color: $blue;
+      font-size: 18px;
+      @include text-shadow(rgba($white, 0.8) 1px 1px 0)
+    }
+  }
+
+  .address {
+    > h1 {
+      @extend %a11y-hidden-base-extend;
+    }
+  }
+}
+// {footer}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{footer--site}
+// Site styling for Footer Component
+
+// {footer--site}@
+//////////////////////////////
+
+}

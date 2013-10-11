@@ -1,0 +1,25 @@
+
+// Default font stacks
+$font-sans: futura-pt, sans;
+// $font-serifs: "Hoefler Text", abril-fatface, Georgia, serif;
+$font-serifs: abril-fatface, "Hoefler Text", Georgia, serif;
+$font-mono: "adobe source code pro", courier-prime, Consolas, Menlo, "Courier New", monospace, monospace;
+
+// General font variables
+$font-body: $font-sans;
+$font-headline: $font-sans;
+$font-logo: $font-sans;
+
+// Special use font variables
+// ampersands
+$font-amp: $font-serifs;
+// caps
+$font-cap: $font-sans;
+
+
+////////////////////////////
+// CUSTOM FONTS
+// uncomment and customize with your own fonts
+// place fonts in your fonts directory
+////////////////////////////
+

@@ -1,0 +1,159 @@
+//////////////////////////////
+// Bird-feed Component
+//
+// The partial and folder structure for this component should be as follows:
+// _bird-feed.scss
+// bird-feed (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "bird-feed/mixins";
+@import "bird-feed/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--bird-feed set to `true` will output the CSS selectors for Bird-feedComponent
+$output-selectors--bird-feed: true !default;
+@if $output-selectors and $output-selectors--bird-feed {
+//////////////////////////////
+
+//////////////////////////////
+// @{bird-feed}
+// Styling for Bird-feed Component
+$clip-arrow-left: polygon(
+  3.5% 0%,
+  100% 0%,
+  100% 100%,
+  3.5% 100%,
+  3.5% 55%,
+  0%   50%,
+  3.5% 45%,
+  3.5% 0%);
+$clip-arrow-bottom: polygon(
+  0%   0%,
+  100% 0%,
+  100% 95%,
+  53%  95%,
+  50%  100%,
+  47%  95%,
+  0%   95%);
+$clip-chevron-left: polygon(
+  03.119% 100%,
+  0%      94.453%,
+  03.119% 88.906%,
+  0%      83.359%,
+  03.119% 77.812%,
+  0%      72.266%,
+  03.119% 66.719%,
+  0%      61.172%,
+  03.119% 55.625%,
+  0%      50.078%,
+  03.119% 44.532%,
+  0%      38.985%,
+  03.119% 33.438%,
+  0%      27.891%,
+  03.119% 22.345%,
+  0%      16.798%,
+  03.119% 11.251%,
+  0%      05.807%,
+  03.119% 0,
+  100%    0,
+  100%    100%,
+  03.119% 100%);
+$clip-chevron-bottom: polygon(
+  0%      0%,
+  0%      93.8%,
+  03.208% 100%,
+  06.327% 93.8%,
+  09.447% 100%,
+  12.566% 93.8%,
+  15.686% 100%,
+  18.805% 93.8%,
+  21.924% 100%,
+  25.044% 93.8%,
+  28.164% 100%,
+  31.283% 93.8%,
+  34.402% 100%,
+  37.522% 93.8%,
+  40.641% 100%,
+  43.761% 93.8%,
+  46.880% 100%,
+  50%     93.8%,
+  53.114% 100%,
+  56.238% 93.8%,
+  59.358% 100%,
+  62.477% 93.8%,
+  65.597% 100%,
+  68.716% 93.8%,
+  71.835% 100%,
+  74.955% 93.8%,
+  78.075% 100%,
+  81.194% 93.8%,
+  84.313% 100%,
+  87.433% 93.8%,
+  90.552% 100%,
+  93.672% 93.8%,
+  96.791% 100%,
+  100%    93.8%,
+  100%    0%);
+
+.bird-feed {
+  @extend %vertical-separation;
+  .section-title {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  article {
+    @extend %vertical-separation;
+    padding-top: em($base-line-height * 0.5);
+    &:nth-of-type(even) {
+      background-color: $white;
+    }
+    > h1 {
+      @extend %article-heading;
+      border-bottom: 1px dashed $gray-trans;
+      @include trailer;
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  img {
+    display: block;
+    margin-top: 1em;
+    max-width: 100%;
+    max-width: 320px;
+    -webkit-clip-path: $clip-chevron-bottom;
+    clip-path: url("#chevron-bottom");
+    @include breakpoint($bp-blog-img-center) {
+      margin: 1em auto 0.5em;
+    }
+    @include breakpoint($bp-blog-2col) {
+      @include grid-span(1, 2);
+      margin-left: gutter-span();
+      -webkit-clip-path: $clip-chevron-left;
+      clip-path: url("#chevron-left");
+    }
+  }
+}
+// {bird-feed}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{bird-feed--teasers}
+// Teasers styling for Bird-feed Component
+
+// {bird-feed--teasers}@
+//////////////////////////////
+
+}

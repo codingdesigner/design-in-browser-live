@@ -1,0 +1,50 @@
+//////////////////////////////
+// List Component
+//
+// The partial and folder structure for this component should be as follows:
+// _list.scss
+// list (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "list/mixins";
+@import "list/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--list set to `true` will output the CSS selectors for ListComponent
+$output-selectors--list: true !default;
+@if $output-selectors and $output-selectors--list {
+//////////////////////////////
+
+//////////////////////////////
+// @{list}
+// Styling for List Component
+
+// {list}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{list--inline}
+// Inline styling for List Component
+
+// {list--inline}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{list--no-bullets}
+// No-bullets styling for List Component
+
+// {list--no-bullets}@
+//////////////////////////////
+
+}

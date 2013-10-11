@@ -1,0 +1,21 @@
+//////////////////////////////
+// Border Component Extendable Classes
+//////////////////////////////
+
+$border-extendables-extended: false !default;
+
+@if not ($border-extendables-extended) {
+  %border-std {
+    @include border($extend: false);
+  }
+
+  %border-bottom-dashed {
+    @include border($sides: bottom, $style: dashed, $color: rgba($gray-light, 0.5), $extend: false);
+  }
+
+  %border-right-blue {
+    @include border($sides: right, $color: shade($blue-slate, 20%), $extend: false);
+  }
+}
+
+$border-extendables-extended: true;

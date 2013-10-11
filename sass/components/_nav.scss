@@ -1,0 +1,180 @@
+//////////////////////////////
+// Nav Component
+//
+// The partial and folder structure for this component should be as follows:
+// _nav.scss
+// nav (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "nav/mixins";
+@import "nav/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--nav set to `true` will output the CSS selectors for NavComponent
+$output-selectors--nav: true !default;
+@if $output-selectors and $output-selectors--nav {
+//////////////////////////////
+
+//////////////////////////////
+// @{nav}
+// Styling for Nav Component
+
+// {nav}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{nav--site}
+// Site styling for Nav Component
+.main-nav {
+  @extend %slab-sc-medium;
+  letter-spacing: 1px;
+}
+
+#jPanelMenu-menu {
+  @extend %offside-left;
+  @extend %nav-type;
+  @extend %nav-type-offside;
+  ul {
+    @extend %no-bullets;
+  }
+  a {
+    @extend %links-white;
+  }
+  .jPanelMenu-panel & {
+    display: none;
+  }
+}
+
+#wall {
+  @extend %wall;
+}
+
+.menu-trigger {
+  @extend %icon-button;
+  @extend %link-unset-borders-extend;
+  @include breakpoint($bp-nav) {
+    display: none;
+  }
+}
+
+
+.no-jPanelMenu {
+  main {
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-direction(column);
+    .site-header {
+      @include box-ordinal-group(1);
+      position: relative;
+      z-index: $zi-header;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    > .body-wrapper {
+      @include box-ordinal-group(3);
+      position: relative;
+      z-index: $zi-content;
+    }
+    #footer {
+      @include box-ordinal-group(4);
+    }
+    #menu {
+      @include box-ordinal-group(2);
+      position: relative;
+      z-index: $zi-menu;
+    }
+  }
+  .no-flexbox & {
+  }
+  .main-nav {
+    max-width: 1000px;
+    @include breakpoint($bp-big-logo) {
+      margin: 0 auto;
+    }
+  }
+}
+
+#menu {
+  .jPanelMenu-panel & {
+    @extend %a11y-hidden-focusable-extend;
+  }
+  // margin-bottom: -0.5em;
+  padding: 0.5em 0 1.5em;
+  background-color: $white;
+  ul {
+    @include display-box;
+    @include box-orient(horizontal);
+    @include box-align(stretch);
+    @include transform3d( translateY(0.75em) );
+    @extend %no-bullets;
+    margin: 0 1em;
+    padding-left: 0;
+  }
+  li {
+    @include box-flex(1);
+    margin: 0 0.25em;
+    padding: 0 0.25em;
+    text-align: center;
+    @for $i from 1 through 7 {
+      &:nth-of-type(#{$i}) {
+        a {
+          &:before {
+            background: {
+              image: image-url('birds/bird-0#{$i}.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+  a {
+    @include transition(all 0.5s ease);
+    @extend %nav-links;
+    @extend %link-unset-borders-extend;
+    position: relative;
+    z-index: 1;
+    &:before {
+      @include transform3d( translateX(0) translateY(-20%) rotateZ(0deg) scale(0.8) );
+      @include apply-origin( 50% 100% 0, false);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 45px;
+      background: {
+        repeat: no-repeat;
+        position: 50% 0;
+      }
+      content: $space;
+      opacity: 0.2;
+      @include breakpoint($bp-nav-big-logo) {
+        @include transform3d( translateX(0) translateY(-10%) rotateZ(0deg) );
+      }
+    }
+    // &:hover {
+    //   &:before {
+    //     .cssanimations & {
+    //       @include experimental(animation, navbirds-small 0.66s ease-in 1 forwards);
+    //       @include breakpoint($bp-nav-big-logo) {
+    //         @include experimental(animation, navbirds 0.66s ease-in 1 forwards);
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
+// {nav--site}@
+//////////////////////////////
+
+}

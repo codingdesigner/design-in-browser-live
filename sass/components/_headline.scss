@@ -1,0 +1,42 @@
+//////////////////////////////
+// Headline Component
+//
+// The partial and folder structure for this component should be as follows:
+// _headline.scss
+// headline (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "headline/mixins";
+@import "headline/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--headline set to `true` will output the CSS selectors for HeadlineComponent
+$output-selectors--headline: true !default;
+@if $output-selectors and $output-selectors--headline {
+//////////////////////////////
+
+//////////////////////////////
+// @{headline}
+// Styling for Headline Component
+
+// {headline}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{headline--press}
+// Press styling for Headline Component
+
+// {headline--press}@
+//////////////////////////////
+
+}

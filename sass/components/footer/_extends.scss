@@ -1,0 +1,11 @@
+//////////////////////////////
+// Footer Component Extendable Classes
+//////////////////////////////
+
+$footer-extendables-extended: false !default;
+
+@if not ($footer-extendables-extended) {
+  // Replace this line with extendable calsses
+}
+
+$footer-extendables-extended: true;

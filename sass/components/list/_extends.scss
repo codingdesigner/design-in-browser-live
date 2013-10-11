@@ -1,0 +1,17 @@
+//////////////////////////////
+// List Component Extendable Classes
+//////////////////////////////
+
+$list-extendables-extended: false !default;
+
+@if not ($list-extendables-extended) {
+  %inline-list {
+    @include inline-list;
+  }
+
+  %no-bullets {
+    @include no-bullets;
+  }
+}
+
+$list-extendables-extended: true;

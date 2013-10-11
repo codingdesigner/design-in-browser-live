@@ -1,0 +1,42 @@
+//////////////////////////////
+// Title Component
+//
+// The partial and folder structure for this component should be as follows:
+// _title.scss
+// title (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "title/mixins";
+@import "title/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--title set to `true` will output the CSS selectors for TitleComponent
+$output-selectors--title: true !default;
+@if $output-selectors and $output-selectors--title {
+//////////////////////////////
+
+//////////////////////////////
+// @{title}
+// Styling for Title Component
+
+// {title}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{title--section}
+// Section styling for Title Component
+
+// {title--section}@
+//////////////////////////////
+
+}

@@ -1,0 +1,21 @@
+//////////////////////////////
+// Feature Component Mixins
+//////////////////////////////
+
+//////////////////////////////
+// Hero Component Default Variables
+$hero-caption-extend: true !default;
+//////////////////////////////
+
+@mixin hero-caption($extend: $hero-caption-extend) {
+  @if $extend {
+    @extend %hero-caption;
+  }
+  @else {
+    float: left;
+    clear: left;
+    margin: 0;
+    padding: em(3px) 0.5em;
+    background: rgba($white, 0.8);
+  }
+}

@@ -1,0 +1,91 @@
+//////////////////////////////
+// Border Component Mixins
+//////////////////////////////
+
+//////////////////////////////
+// Baseline Component Default Variables
+$border-extend: true !default;
+$border-size-default: em(1px) !default;
+$border-color-default: $cs-border !default;
+$border-style-default: solid !default;
+$border-sides-default: false !default;
+//////////////////////////////
+
+@function border-build($values...){
+  $result: null;
+  @each $value in $values {
+    $result: $result $value;
+  }
+  @return $result;
+}
+
+@function border-this-value($values, $index) {
+  @if length($values) > 1 {
+    @return nth($values, $index);
+  }
+  @else {
+    @return $values;
+  }
+}
+
+@function border-single($value) {
+  @if length($value) > 1 {
+    @return null;
+  }
+  @else {
+    @return $value;
+  }
+}
+
+@mixin border($size: $border-size-default, $color: $border-color-default, $style: $border-style-default, $sides: $border-sides-default, $extend: $border-extend) {
+  @if ($size != $border-size-default) or ($color != $border-color-default) or ($style != $border-style-default) or ($sides != $border-sides-default) {
+    $extend: false;
+  }
+  @if $extend {
+    @extend %border-std;
+  }
+  @else {
+    $split: false;
+    $partial-split: false;
+    @if (length($size) > 1) or (length($style) > 1) or (length($color) > 1) {
+      $split: true;
+      @if (length($size) == 1) or (length($style) == 1) or (length($color) == 1) {
+        $partial-split: true;
+      }
+    }
+    @if $sides != false {
+      @each $side in $sides {
+        @if $split {
+          $index: index($sides, $side);
+          $this-size: border-this-value($size, $index);
+          $this-style: border-this-value($style, $index);
+          $this-color: border-this-value($color, $index);
+          border-#{$side}: $this-size $this-style $this-color;
+        }
+        @else {
+          border-#{$side}: $size $style $color;
+        }
+      }
+    }
+    @else if $split {
+      @if $partial-split {
+        border: border-single($size) border-single($style) border-single($color);
+        border: {
+          @if length($size) > 1 { size: border-build($size); }
+          @if length($style) > 1 { style: border-build($style); }
+          @if length($color) > 1 { color: border-build($color); }
+        }
+      }
+      @else {
+        border: {
+          size: border-build($size);
+          style: border-build($style);
+          color: border-build($color);
+        }
+      }
+    }
+    @else {
+      border: $size $style $color;
+    }
+  }
+}

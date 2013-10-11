@@ -1,0 +1,44 @@
+//////////////////////////////
+// Speech-bubble Component
+//
+// The partial and folder structure for this component should be as follows:
+// _speech-bubble.scss
+// speech-bubble (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "speech-bubble/mixins";
+@import "speech-bubble/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--speech-bubble set to `true` will output the CSS selectors for Speech-bubbleComponent
+$output-selectors--speech-bubble: true !default;
+@if $output-selectors and $output-selectors--speech-bubble {
+//////////////////////////////
+
+//////////////////////////////
+// @{speech-bubble}
+// Styling for Speech-bubble Component
+.speech-bubble {
+  @extend %speech-bubble;
+}
+// {speech-bubble}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{speech-bubble--base}
+// Base styling for Speech-bubble Component
+
+// {speech-bubble--base}@
+//////////////////////////////
+
+}

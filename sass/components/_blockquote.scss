@@ -1,0 +1,52 @@
+//////////////////////////////
+// Blockquote Component
+//
+// The partial and folder structure for this component should be as follows:
+// _blockquote.scss
+// blockquote (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "blockquote/mixins";
+@import "blockquote/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--blockquote set to `true` will output the CSS selectors for BlockquoteComponent
+$output-selectors--blockquote: true !default;
+@if $output-selectors and $output-selectors--blockquote {
+//////////////////////////////
+
+//////////////////////////////
+// @{blockquote}
+// Styling for Blockquote Component
+blockquote {
+  @extend %blockquote-quote-extend;
+}
+// {blockquote}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{blockquote--quote}
+// Quote styling for Blockquote Component
+
+// {blockquote--quote}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{blockquote--footer}
+// Footer styling for Blockquote Component
+
+// {blockquote--footer}@
+//////////////////////////////
+
+}

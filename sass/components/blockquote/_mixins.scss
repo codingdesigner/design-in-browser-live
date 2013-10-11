@@ -1,0 +1,55 @@
+//////////////////////////////
+// Blockquote Component Mixins
+//////////////////////////////
+
+//////////////////////////////
+// Blockquote Component Default Variables
+$blockquote-base-extend: true !default;
+$blockquote-quote-extend: true !default;
+$blockquote-footer-extend: true !default;
+//////////////////////////////
+
+@mixin blockquote-base($extend: $blockquote-base-extend) {
+  @if $extend {
+    @extend %blockquote-base-extend;
+  }
+  @else {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin blockquote-quote($extend: $blockquote-quote-extend) {
+  @if $extend {
+    @extend %blockquote-quote-extend;
+  }
+  @else {
+    position: relative;
+    margin: 0 0 26px 1.5em;
+    &:before {
+      @extend %slab-medium;
+      position: absolute;
+      left: -0.5em;
+      color: $orange-dark;
+      content: "“";
+      font-size: 3em;
+      line-height: 1;
+    }
+  }
+}
+
+@mixin blockquote-footer($extend: $blockquote-footer-extend) {
+  @if $extend {
+    @extend %blockquote-footer-extend;
+  }
+  @else {
+    color: $orange-darker;
+    text-align: right;
+    &:before {
+      margin-right: 0.25em;
+      color: $blue;
+      content: "~";
+    }
+  }
+}

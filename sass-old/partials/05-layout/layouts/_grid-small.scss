@@ -1,0 +1,54 @@
+.grid-container-small {
+  @include breakpoint($bp-grid-small-2) {
+    width: 477px;
+    margin: 0 auto 30px;
+  }
+  @include breakpoint($bp-grid-small-3) {
+    width: 714px;
+  }
+  @include breakpoint($bp-grid-small-4) {
+    width: 953px;
+  }
+}
+
+.grid-container-small {
+  .asset-thumb {
+    @extend .title-overlay;
+    max-width: 221px;
+    border: 2px solid $gray-dark;
+    &.active {
+      border-color: $white;
+    }
+    .meta {
+      padding: 6px 10px 5px;
+      @include breakpoint($bp-grid-small-2-squish) {
+        font-size: 12px;
+      }
+    }
+    .season-episode {
+      font-size: 14px;
+      @include breakpoint($bp-grid-small-2-squish) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.grid-container-small {
+  .asset-thumb {
+    display: inline-block;
+    zoom: 1;
+    verticle-align: top;
+    @include breakpoint($bp-grid-small-2-squish) {
+      margin: 0 2% 4% 0;
+      width: 46%;
+    }
+    @include breakpoint($bp-grid-small-2) {
+      margin: 0 15px 15px 0;
+      width: 221px;
+    }
+    @include breakpoint($bp-grid-small-2) {
+      margin: 0 7px 15px 7px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+//////////////////////////////
+// Teaser Component
+//
+// The partial and folder structure for this component should be as follows:
+// _teaser.scss
+// teaser (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "teaser/mixins";
+@import "teaser/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--teaser set to `true` will output the CSS selectors for TeaserComponent
+$output-selectors--teaser: true !default;
+@if $output-selectors and $output-selectors--teaser {
+//////////////////////////////
+
+//////////////////////////////
+// @{teaser}
+// Styling for Teaser Component
+
+// {teaser}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{teaser--blog}
+// Blog styling for Teaser Component
+
+// {teaser--blog}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{teaser--testimonial}
+// Testimonial styling for Teaser Component
+
+// {teaser--testimonial}@
+//////////////////////////////
+
+}

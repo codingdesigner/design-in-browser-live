@@ -1,0 +1,22 @@
+//////////////////////////////
+// Speech-bubble Component Mixins
+//////////////////////////////
+
+//////////////////////////////
+// Blockquote Component Default Variables
+$speech-bubble-extend: true !default;
+//////////////////////////////
+
+@mixin speech-bubble($extend: $speech-bubble-extend) {
+  @if $extend {
+    @extend %speech-bubble;
+  }
+  @else {
+    display: block;
+    float: left;
+    margin: auto 0.5em auto -1.5em;
+    font-size: ms(1);
+    opacity: 0.75;
+    @include transform3d( translateY(2px) scale(1.5) );
+  }
+}

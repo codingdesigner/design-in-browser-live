@@ -1,0 +1,33 @@
+.title-overlay {
+  position: relative;
+  display: block;
+  h2 {
+    @extend %h2;
+    font-size: 20px;
+  }
+  .meta, h2 {
+    background: $black-trans;
+    bottom: 0;
+    color: $white;
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    padding: 12px 15px 9px;
+    margin: 0;
+    overflow: hidden;
+    &:after {
+      content: $space;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1em;
+      height: 100%;
+      @include background-image(linear-gradient(right, $black-trans 20%, transparent));
+    }
+  }
+  .field-name-field-caption {
+    @extend %visuallyhidden;
+  }
+}

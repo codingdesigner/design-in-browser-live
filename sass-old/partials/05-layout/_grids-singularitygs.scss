@@ -1,0 +1,12 @@
+// SINGULARITY GRID FRAMEWORK
+
+// NEEDED IN PROTOTYPE
+// TODO: evaluate to remove
+$column-width : 300px;
+$gutter-width : 15px;
+$bp-1-col     : 1 * $column-width + 0 * $gutter-width;
+$bp-2-col     : 2 * $column-width + 1 * $gutter-width;
+$bp-3-col     : 3 * $column-width + 2 * $gutter-width;
+$bp-4-col     : 4 * $column-width + 3 * $gutter-width;
+$bp-5-col     : 5 * $column-width + 4 * $gutter-width;
+$bp-6-col     : 6 * $column-width + 5 * $gutter-width;

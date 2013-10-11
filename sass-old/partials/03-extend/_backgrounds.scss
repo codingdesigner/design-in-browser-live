@@ -1,0 +1,19 @@
+%mid-gray-top-border {
+    background: $black;
+    border-color: $gray-dark;
+    border-style: solid;
+    border-width: 1px 0 0;
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+
+%secondary-menu {
+  @include breakpoint($bp-social-mid-width) {
+    background-color: $gray-dark;
+    border: 1px solid $gray-med-dark;
+    height: 60px;
+    z-index: 6;
+    margin-bottom: 30px;
+  }
+}

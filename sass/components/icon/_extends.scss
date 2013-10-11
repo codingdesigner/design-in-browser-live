@@ -1,0 +1,26 @@
+//////////////////////////////
+// Icon Component Extendable Classes
+//////////////////////////////
+
+$icon-extendables-extended: false !default;
+
+@if not ($icon-extendables-extended) {
+  %icon-inline-list {
+    @include icon-inline-list(false);
+  }
+
+  %icon-button {
+    float: right;
+    min-width: 44px;
+    text-align: center;
+    line-height: 44px;
+    @extend %icon-button-orange;
+  }
+
+  %icon-button-orange {
+    @include set-link-colors($orange-light, $white, $white, $orange-light, $orange-light, $extend: false);
+  }
+
+}
+
+$icon-extendables-extended: true;

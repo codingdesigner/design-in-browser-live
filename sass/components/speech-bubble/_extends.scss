@@ -1,0 +1,13 @@
+//////////////////////////////
+// Speech-bubble Component Extendable Classes
+//////////////////////////////
+
+$speech-bubble-extendables-extended: false !default;
+
+@if not ($speech-bubble-extendables-extended) {
+  %speech-bubble {
+    @include speech-bubble(false);
+  }
+}
+
+$speech-bubble-extendables-extended: true;

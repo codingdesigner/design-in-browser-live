@@ -1,0 +1,63 @@
+//////////////////////////////
+// Press Component
+//
+// The partial and folder structure for this component should be as follows:
+// _press.scss
+// press (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "press/mixins";
+@import "press/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--press set to `true` will output the CSS selectors for PressComponent
+$output-selectors--press: true !default;
+@if $output-selectors and $output-selectors--press {
+//////////////////////////////
+
+//////////////////////////////
+// @{press}
+// Styling for Press Component
+
+// {press}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{press--headlines}
+// Headlines styling for Press Component
+.press-room {
+  @extend %vertical-separation;
+  ul {
+    @extend %no-bullets;
+  }
+  li {
+    @extend %vertical-separation-small;
+    // @extend %un-pad;
+    @extend %border-bottom-dashed;
+    a {
+      @extend %link-unset-borders-extend;
+      display: inline-block;
+      padding-left: 1.5em;
+      &:before {
+        @extend %speech-bubble;
+      }
+    }
+    &:nth-of-type(even) {
+      background-color: $white;
+    }
+  }
+}
+// {press--headlines}@
+//////////////////////////////
+
+}

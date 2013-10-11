@@ -1,0 +1,89 @@
+//////////////////////////////
+// Heading Component Mixins
+//////////////////////////////
+
+//////////////////////////////
+// Headings Component Default Variables
+$orange-block-extend: true !default;
+$orange-block-link-extend: true !default;
+$article-heading-extend: true !default;
+$heading-to-label-extend: true !default;
+$page-title-extend: true !default;
+//////////////////////////////
+
+@mixin orange-block($extend: $orange-block-extend) {
+  @if $extend {
+    @extend %orange-block;
+  }
+  @else {
+    $vert-padding: em($base-font-size, nth($heading-sizes, 1)) / 2;
+    @include margin-trailer(0.5);
+    margin-top: 0;
+    // margin-right: em(-9px, nth($heading-sizes, 1));
+    // margin-left: em(-9px, nth($heading-sizes, 1));
+    padding: $vert-padding em(9px, nth($heading-sizes, 1));
+    background-color: $orange;
+    color: $white;
+  }
+}
+
+@mixin orange-block-link($extend: $orange-block-link-extend) {
+  @if $extend {
+    @extend %orange-block-link;
+  }
+  @else {
+    @include link-colors($white, $white, $white, $white, $white);
+    @include unset-border-links();
+    &:hover {
+      text-shadow: $blue 2px 2px 0;
+    }
+  }
+}
+
+@mixin article-heading($extend: $article-heading-extend) {
+  @if $extend {
+    @extend %article-heading;
+  }
+  @else {
+    margin-bottom: 0.25em;
+    color: $blue;
+    font-size: em(ms(2), $base-font-size);
+    line-height: em(32px, ms(2));
+  }
+}
+
+@mixin heading-to-label($extend: $heading-to-label-extend) {
+  @if $extend {
+    @extend %heading-to-label;
+  }
+  @else {
+    display: inline;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    border-bottom: none;
+    background-color: transparent;
+    color: $orange;
+    &:after {
+      content: ": ";
+      margin-right: 0.25em;
+    }
+  }
+}
+
+@mixin page-title($extend: $page-title-extend) {
+  @if $extend {
+    @extend %page-title;
+  }
+  @else {
+    position: relative;
+    margin-bottom: em(50px, nth($heading-sizes, 1));
+    &:after {
+      @include triangle($orange, 0.5em, 1em, 180);
+      position: absolute;
+      top: 100%;
+      left: 0.25em;
+      content: $space;
+    }
+  }
+}

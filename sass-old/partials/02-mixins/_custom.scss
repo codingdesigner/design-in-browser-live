@@ -1,0 +1,12 @@
+////////////////////////////
+// Custom Mixins
+// nothing here yet.
+// add your own.
+////////////////////////////
+
+@mixin debug-outline($color: red, $background-color: false) {
+  outline: 1px solid $color;
+  @if $background-color != false {
+    background-color: $background-color;
+  }
+}

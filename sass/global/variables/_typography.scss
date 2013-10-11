@@ -1,0 +1,33 @@
+//////////////////////////////
+// Typography
+//////////////////////////////
+
+$archer: 'Archer SSm A', 'Archer SSm B', serif;
+$archer-sc: 'Archer SSm small caps A', 'Archer SSm small caps B', serif;
+$whitney: 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+$whitney-sc: 'Whitney SSm small caps A', 'Whitney SSm small caps B', sans-serif;
+
+//////////////////////
+// Default font stacks
+$font-sans: $whitney;
+$font-serifs: $archer;
+$font-slab: $archer;
+$font-mono: 'Source Code Pro', monospace;
+//////////////////////
+
+//////////////////////
+// General font variables
+$font-body: $font-sans;
+$font-headline: $font-slab;
+$font-logo: $font-slab;
+$font-amp: $font-slab;
+//////////////////////
+
+//////////////////////
+// Font size and line-height
+$base-font-size: nth($base-size, 1);
+$base-line-height: em($base-font-size * 1.625) / 1em;
+//////////////////////
+
+
+

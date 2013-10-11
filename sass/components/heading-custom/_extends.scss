@@ -1,0 +1,33 @@
+//////////////////////////////
+// Heading Component Extendable Classes
+//////////////////////////////
+
+$heading-custom-extendables-extended: false !default;
+
+@if not ($heading-custom-extendables-extended) {
+  %orange-block {
+    @include orange-block(false);
+  }
+
+  %orange-block-link {
+    @include orange-block-link(false);
+  }
+
+  %article-heading {
+    @include article-heading(false);
+  }
+  %article-heading-blue {
+    @include article-heading(false);
+    color: $blue;
+  }
+
+  %heading-to-label {
+    @include heading-to-label(false);
+  }
+
+  %page-title {
+    @include page-title(false);
+  }
+}
+
+$heading-custom-extendables-extended: true;

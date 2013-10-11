@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Designing in the Browser, Live</title>
+
+		<meta name="description" content="Designing in the Browser, Live">
+		<meta name="author" content="Mason Wendell">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- <link rel="stylesheet" href="css/theme/simple.css" id="theme"> -->
+		<!-- <link rel="stylesheet" href="css/snugug.css" id="theme"> -->
+		<link rel="stylesheet" href="css/prototype.css" id="theme">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+    <!-- H&FJ -->
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6578432/747402/css/fonts.css" />
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- <section> -->
+          <section id="main-title" class="white-card">
+            <!-- <h1 class="session-title">Designing in the Browser, Live</h1> -->
+            <header class="site-header" style="background-position: 50% 35.15282941516489%;">
+              <div class="site-header-wrapper">
+                  <h1 class="site-name">Designing in the Browser, Live</h1>
+              </div>
+            </header>
+          </section>
+				<!-- </section> -->
+
+
+
+        <section id="us" class="white-card">
+          <h2>Mason Wendell</h2>
+
+          <img src="/images/masonwendell.jpg" alt=" " class="idiot">
+
+          <ul class=" ">
+            <li class="">Sr. Front End Developer, NBCUniversal</li>
+            <li class="">@codingdesigner on <a href="http://twitter.com/codingdesigner"> Twitter</a>, canarymason on <a href="http://github.com/canarymason">GitHub</a>. <br/> <a href="http://thecodingdesigner.com">TheCodingDesigner.com</a></li>
+            <li class="">Co-Organizer of <a href="github.com/team-sass">Team Sass</a>, Organizer of <a href="http://www.meetup.com/Philadelphia-SASS-Meetup-Group/">Philly Sass Meetup</a> and <a href="http://www.meetup.com/Responsive-Web-Design-Philadelphia/">Philly RWD Meetup</a></li>
+          </ul>
+        </section>
+
+
+        <section id="agenda" class="white-card">
+          <h2>Agenda</h2>
+          <ul>
+            <li class="fragment-xxx">Real Design On A Project</li>
+            <li class="fragment-xxx">Design Process</li>
+            <li class="fragment-xxx">Online Tools</li>
+            <li class="fragment-xxx">Style Prototypes</li>
+          </ul>
+          <ul>
+            <li class="fragment-xxx">Sass Components</li>
+            <li class="fragment-xxx">Breakpoint</li>
+            <li class="fragment-xxx">Singularity</li>
+            <li class="fragment-xxx">Modular Scale</li>
+            <li class="fragment-xxx">Color Schemer</li>
+          </ul>
+        </section>
+
+        <section id="process" class="white-card">
+          <h2>Process</h2>
+          <table>
+            <colgroup>
+            <col style="text-align:left;">
+            <col style="text-align:left;">
+            <col style="text-align:left;"></colgroup>
+
+          <thead>
+            <tr>
+              <th style="text-align:left;">task</th>
+              <th style="text-align:left;">subtasks</th>
+              <th style="text-align:left;">benefit</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th style="text-align:left;">research and content strategy</th>
+              <td style="text-align:left;">interview client, content inventory, model content</td>
+              <td style="text-align:left;">this is design, not art. we need something work with here.</td>
+            </tr>
+            <tr>
+              <th style="text-align:left;">wireframes</th>
+              <td style="text-align:left;">establish componentes in a mobile layout, then wider layouts</td>
+              <td style="text-align:left;">define components and UX</td>
+            </tr>
+            <tr>
+              <th style="text-align:left;">style tiles</th>
+              <td style="text-align:left;">
+                interview client, present colors, type, textures/imagery, key components
+              </td>
+              <td style="text-align:left;">
+                establish a visual direction that speaks to the brand ID and project tone
+              </td>
+            </tr>
+            <tr>
+              <th style="text-align:left;">visual design</th>
+              <td style="text-align:left;">iteratively refine the modules, page, and layouts</td>
+              <td style="text-align:left;">
+                apply the winning style tile direction to the more structural design
+              </td>
+            </tr>
+            <tr>
+              <th style="text-align:left;">style guide</th>
+              <td style="text-align:left;">collect components into one place</td>
+              <td style="text-align:left;">to evaluate the design system as a whole</td>
+            </tr>
+          </tbody>
+          </table>
+        </section>
+
+				<section id="stuff-i-use" class="white-card">
+					<h2>The Stuff I Use</h2>
+          <ul>
+            <li>paper</li>
+            <li>chrome
+              <ul>
+                <li>inspector</li>
+                <li>
+                  <a href="https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh">window resizer</a>
+                </li>
+                <li>
+                  <a href="https://chrome.google.com/webstore/detail/currently/ojhmphdkpgbibohbnpbfiefkgieacjmh">currently</a>
+                  : time and weather
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="http://www.sublimetext.com/2">sublime 2</a>
+
+              <ul>
+                <li>
+                  <a href="https://github.com/canarymason/Sublime-Config">config</a>
+                </li>
+                <li>
+                  <a href="https://www.dropbox.com/sh/w2t2plyr4vaxjwa/m_WXgfDERi">packages</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="http://daringfireball.net/projects/markdown/">markdown</a>
+
+              <ul>
+                <li>
+                  <a href="http://brettterpstra.com/projects/nvalt/">nvalt</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="http://www.iterm2.com/#/section/home">iterm2</a>
+
+              <ul>
+                <li>
+                  <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>
+                  with
+                  <a href="https://gist.github.com/agnoster/3712874">agnoster theme</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              git
+              <ul>
+                <li>
+                  <a href="https://github.com/">github.com</a>
+                </li>
+                <li>
+                  <a href="http://www.git-tower.com/">Git Tower</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="sass-lang.com">Sass</a>
+
+              <ul>
+                <li>
+                  <a href="compass-style.org">Compass</a>
+                </li>
+                <li>
+                  <a href="breakpoint-sass.com">Breakpoint</a>
+                </li>
+                <li>
+                  <a href="http://singularity.gs/">Singularity</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Team-Sass/color-schemer">Color-schemer</a>
+                </li>
+                <li>
+                  <a href="https://github.com/Team-Sass/modular-scale/">Modular Scale</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Web Apps
+              <ul>
+                <li>
+                  <a href="http://symbolset.com/">Symbolset</a>
+                </li>
+                <li>
+                  <a href="http://icomoon.io/">Icomoon</a>
+                </li>
+                <li>
+                  <a href="http://typecast.com/">typecast</a>
+                </li>
+                <li>
+                  <a href="typekit.com">typekit</a>
+                </li>
+                <li>
+                  <a href="http://www.google.com/fonts/">google fonts</a>
+                </li>
+                <li>
+                  <a href="http://www.typography.com/">typography.com</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/Team-Sass/generator-style-prototype">Style Prototypes</a>
+            </li>
+            <li>Photoshop / Illustrator</li>
+          </ul>
+				</section>
+
+
+        <section id="thank-you" class="white-card">
+          <h1>Thank You</h1>
+          <h2>Mason Wendell</h2>
+          <ul>
+            <li>Sr. Front End Developer, NBCUniversal</li>
+            <li>
+              @codingdesigner on
+              <a href="http://twitter.com/codingdesigner">Twitter</a>
+            </li>
+            <li>
+              canarymason on
+              <a href="http://github.com/canarymason">GitHub</a>
+            </li>
+            <li>
+              <a href="http://thecodingdesigner.com">TheCodingDesigner.com</a>
+            </li>
+            <li class="no-dash">
+              Team Sass <a href="https://github.com/team-sass">github.com/team-sass</a>
+            </li>
+          </ul>
+
+          <p>Slides available at</p>
+          <p>
+            <a href="http://canarymason.github.io/managing-rwd-presentation/">canarymason.github.io/managing-rwd-presentation</a>
+          </p>
+          <!-- <blockquote>Stop When it Looks Good.</blockquote>
+        -->
+        </section>
+
+
+
+
+
+
+
+
+        <section class="quote" id="rwd-is-hard">
+          <blockquote>
+            <p>Of Course Responsive Web Design is Hard. It's Design.
+              <b class="fragment">Mason</b></p>
+          </blockquote>
+        </section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section id="assumptions">
+						<h1 class="section-marker">I</h1>
+						<h2>Let’s Get a Few Things Straight.</h2>
+					</section>
+					<section id="experiment-setup">
+						<h3>Hold up your hand if you own a smartphone.</h3>
+					</section>
+					<section id="experiment-commence">
+						<h3>Lower it if you have the same make and model phone as your neighbors</h3>
+					</section>
+					<section id="experiment-finale" data-state="orange">
+						<a href="http://knowyourmeme.com/memes/thats-racist"><img src="images/thats-racist.gif" alt="That's Devicist"/></a>
+					</section>
+					<section id="unknown-unknowns">
+						<blockquote>
+							<p>Responsive Web Design isn’t about current devices and known unknowns, it’s about future devices and unknown unknowns.</p>
+							<b class="fragment">Sam Richard</b>
+						</blockquote>
+					</section>
+				</section>
+				<section>
+					<section id="the-right-way">
+						<h1>So what's the Right Way?</h1>
+					</section>
+					<section id="content-first">
+						<h3>We start with <a href="http://alistapart.com/article/your-content-now-mobile">content first</a>.</h3>
+						<blockquote cite="http://www.ripariandata.com/mail-room-blog/blog/an-event-apart-sf-recap-the-message-is-the-medium" class="zeldman">
+							<p>It’s not about mobile first (or just small screen first) – it's about content first. But it happens that thinking about what works for mobile does work for other things as well.</p>
+							<b>Jeffery Zeldman</b>
+						</blockquote>
+					</section>
+					<section id="mobile-first">
+						<h3>Then we design for <a href="http://www.lukew.com/ff/entry.asp?933">mobile</a> and work our way up from there.</h3>
+					</section>
+					<section id="standards">
+						<h3>Using <a href="http://www.w3.org/standards/about.html">web standards</a> and best practices along the way.</h3>
+					</section>
+					<section id="agnostic-friendly">
+						<h3>We're <a href="http://alistapart.com/article/responsive-web-design">device agnostic</a> and <a href="http://futurefriend.ly/">future friendly</a>.</h3>
+					</section>
+					<section id="builders">
+						<h3>Like good little web builders.</h3>
+					</section>
+          <section id="bonus">
+            <h1>Bonus</h1>
+            <p>Gold stars to you if you also consider:</p>
+            <h3><a href="tktktk">Style Tiles</a></h3>
+            <h3><a href="tktktk">Living Style Guides</a></h3>
+            <h3><a href="tktktk">Style Prototypes</a></h3>
+            <h3>Nailing your <a href="tktktk">Typography</a> first / early</h3>
+          </section>
+				</section>
+
+				<section>
+					<section id="secret-weapon">
+						<h1>Is there a secret weapon?</h1>
+					</section>
+					<section id="know-sass">
+						<h2>We know Sass.</h2>
+            <ul>
+              <li class="fragment">You're familiar with variables and nesting.</li>
+              <li class="fragment">You've used some mixins.</li>
+              <li class="fragment">You've hopefully tried Compass.</li>
+            </ul>
+						<h3 class="fragment">Let's learn some Sass together.</h3>
+          </section>
+				</section>
+
+				<section id="vanilla-sass">
+					<h1 class="section-marker">II</h1>
+					<h2>Media Queries with Vanilla Sass</h2>
+				</section>
+				<section id="media-queries-breakpoints-tweakpoints">
+					<h2>Breakpoints vs Tweakpoints</h2>
+					<ul>
+						<li class="fragment no-dash"><h3>Breakpoints for large changes</h3></li>
+						<li class="fragment no-dash"><h3>Tweakpoints for small adjustments</h3></li>
+					</ul>
+				</section>
+
+
+				<section>
+          <section id="media-queries-bubbled">
+            <h2>Separation vs Nesting</h2>
+            <h3>Why is this wrong?</h3>
+            <pre><code class="language-scss">.menu {
+  padding: 10px;
+}
+.subnav {
+  padding: 5px;
+}
+@media (min-width: 500px) {
+  .menu {
+    padding: 100px;
+  }
+  .subnav {
+    padding: 25px;
+  }
+}</code></pre>
+          </section>
+					<section id="media-queries-bubbled">
+						<h2>Nesting and Media Bubbling</h2>
+						<p>In many cases it's more intuitive to keep your media queries with what they're altering.</p>
+						<pre class="half point-right"><code class="language-scss">.menu {
+  padding: 10px;
+  @media (min-width: 500px) {
+    padding: 100px;
+  }
+}
+.subnav {
+  padding: 5px;
+  @media (min-width: 500px) {
+    padding: 25px;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">.menu {
+  padding: 10px;
+}
+@media (min-width: 500px) {
+  .menu {
+    padding: 100px;
+  }
+}
+.subnav {
+  padding: 5px;
+}
+@media (min-width: 500px) {
+  .subnav {
+    padding: 25px;
+  }
+}</code></pre>
+					</section>
+
+					<section>
+						<h1 class="fragment kaboom">NO.</h1>
+						<h2>Is this a problem?</h2>
+					</section>
+				</section>
+
+
+
+
+
+
+
+				<section>
+					<section id="breakpoint">
+						<h1 class="section-marker">III</h1>
+						<h2>Breakpoint</h2>
+						<p><a href="http://breakpoint-sass.com">breakpoint-sass.com</a></p>
+            <footer>Team Sass: Mason Wendell (@codingdesigner) &amp; Sam Richard (@snugug)</footer>
+					</section>
+					<section id="breakpoint-value-proposition">
+            <h2>Why do I want this?</h2>
+            <ul>
+	            <li class="fragment">Boil down most media queries to one simple value.</li>
+	            <li class="fragment">Simplify creating all media queries, even the crazy complex ones.</li>
+	            <li class="fragment">Assign that value a meaningful name.</li>
+	            <li class="fragment">Manage media queries by purpose and context.</li>
+            </ul>
+					</section>
+					<section id="breakpoint-install">
+						<h2>Using Breakpoint</h2>
+						<h3><a href="https://github.com/team-sass/breakpoint">github.com/team-sass/breakpoint</a></h3>
+						<pre class="fragment"><code class="language-scss">// command line
+> gem install breakpoint</code></pre>
+						<pre class="fragment"><code class="language-scss">// compass.rb
+require 'breakpoint'</code></pre>
+						<pre class="fragment"><code class="language-scss">// working sass file
+@import 'breakpoint';</code></pre>
+					</section>
+				</section>
+
+
+				<section>
+					<section id="breakpoint-basic-intro">
+						<h2>Basic Uses and Sensible Defaults</h2>
+						<blockquote class="bodhi">
+							<p>Only live to get radical.</p>
+							<b>Bodhi</b>
+						</blockquote>
+					</section>
+					<section id="breakpoint-basic-single">
+						<h2>Single value = min-width</h2>
+						<p>Pass Breakpoint just a number and you get a min-width query.</p>
+						<pre class="half point-right"><code class="language-scss">// THIS IS OUR FIRST BREAKPOINT VARIABLE
+$basic: 500px; // <-- YUP, THIS ONE
+
+#johnny-utah {
+  color: #C0FFEE;
+  @include breakpoint($basic) {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#johnny-utah {
+  color: #C0FFEE;
+}
+@media (min-width: 500px) {
+  #johnny-utah {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-basic-single-em">
+						<h2>Convert Numbers to Ems</h2>
+						<p>for more accessible media queries</p>
+						<pre class="half point-right"><code class="language-scss">$breakpoint-to-ems: true;
+$basic: 500px;
+
+#johnny-utah {
+  color: #C0FFEE;
+  @include breakpoint($basic) {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#johnny-utah {
+  color: #C0FFEE;
+}
+@media (min-width: 31.25em) {
+  #johnny-utah {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+
+				</section>
+				<section>
+					<section id="put-it-together">
+						<h2>Why again is this cool?</h2>
+            <div class="half">
+						<h3>Remember this?</h3>
+						<pre class="point-right"><code class="language-scss">.menu {
+  padding: 10px;
+  @media (min-width: 500px) {
+    padding: 100px;
+  }
+}
+.subnav {
+  padding: 5px;
+  @media (min-width: 500px) {
+    padding: 25px;
+  }
+}</code></pre>
+            </div>
+            <div class="fragment half">
+              <h3>With Breakpoint</h3>
+            <pre><code class="language-scss">$menu-room-for-air: 500px;
+.menu {
+  padding: 10px;
+  @include breakpoint($menu-room-for-air) {
+    padding: 100px;
+  }
+}
+.subnav {
+  padding: 5px;
+  @include breakpoint($menu-room-for-air) {
+    padding: 25px;
+  }
+}</code></pre>
+            </div>
+					</section>
+
+					<section id="put-it-together-3">
+						<h2><strong class="fancy">OH NO!</strong> WE NEED TO CHANGE SOMETHING!</h2>
+						<pre><code class="language-scss">$menu-room-for-air: 642px;
+.menu {
+  padding: 10px;
+  @include breakpoint($menu-room-for-air) {
+    padding: 100px;
+  }
+}
+.subnav {
+  padding: 5px;
+  @include breakpoint($menu-room-for-air) {
+    padding: 25px;
+  }
+}</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section id="breakpoint-basic-fenced">
+						<h2>Fenced Values</h2>
+						<p>Two values creates a min-width / max-width query.</p>
+						<pre class="half point-right"><code class="language-scss">$fenced: 330px 750px;
+
+#bodhi {
+  color: #C0FFEE;
+  @include breakpoint($fenced) {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#bodhi {
+  color: #C0FFEE;
+}
+@media (min-width: 330px) and (max-width: 750px) {
+  #bodhi {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section id="breakpoint-basic-explicit">
+						<h2>Explicit Test / Value</h2>
+						<p>If one value is a string, assume a feature/value pair</p>
+						<pre class="half point-right"><code class="language-scss">$surfboard-width: max-width 1000px;
+
+#fifty-seven-chevy {
+  color: #C0FFEE;
+  @include breakpoint($surfboard-width) {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#fifty-seven-chevy {
+  color: #C0FFEE;
+}
+@media (max-width: 1000px) {
+  #fifty-seven-chevy {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+
+					<!-- <section id="breakpoint-basic-explicit-fenced">
+					  <h2>Min / Max Fencing an Explicit Test</h2>
+					  <p>
+					    A string grouped with two numbers will create a min/max query
+					  </p>
+					  <pre><code class="language-scss">$catch-bodhi: height 300px 700px;
+#no-parachute {
+  color: #C0FFEE;
+  @include breakpoint($catch-bodhi) {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section> -->
+					<!-- <section id="breakpoint-basic-explicit-fenced-css">
+					  <h2>Explicit Test / Value</h2>
+					  <p>compiled css</p>
+					  <pre><code class="language-scss">#no-parachute {
+  color: #C0FFEE;
+}
+@media (min-height: 300px) and (max-height: 700px) {
+  #no-parachute {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section> -->
+					<!-- <section id="breakpoint-basic-nonnumeric">
+						<h2>Explicit Test / Value</h2>
+						<p>This also works with non-numeric tests</p>
+						<pre><code class="language-scss">$quarterback: orientation portrait;
+#quarterback-punk {
+  color: #C0FFEE;
+  @include breakpoint($quarterback) {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section> -->
+					<!-- <section id="breakpoint-basic-nonnumeric-css">
+						<h2>Explicit Test / Value</h2>
+						<p>compiled css</p>
+						<pre><code class="language-scss">#quarterback-punk {
+  color: #C0FFEE;
+}
+@media (orientation: portrait) {
+  #quarterback-punk {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section> -->
+				</section>
+
+				<section>
+					<section id="breakpoint-basic-combine">
+						<h2>Combine Tests</h2>
+						<p>String them together to create more complex queries</p>
+            <div class="point-down">
+  						<pre><code class="language-scss">$combined: (max-width 1000px) (orientation portrait);</code></pre>
+            </div>
+<pre class="half point-right"><code class="language-scss">#pappas {
+  color: #C0FFEE;
+  @include breakpoint($combined) {
+    color: #BADA55;
+  }
+}</code></pre>
+<pre class="half"><code class="language-scss">#pappas {
+  color: #C0FFEE;
+}
+@media (max-width: 1000px) and (orientation: portrait) {
+  #pappas {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-basic-combine-long">
+					  <h2>Combine Lots of Tests</h2>
+					  <p>String them together to create more complex queries</p>
+            <div class="point-down">
+              <pre><code class="language-scss">$long: (500px) (height 700px 1000px) (orientation portrait) (monochrome);</code></pre>
+            </div>
+					  <pre class="half point-right"><code class="language-scss">#warchild {
+  color: #C0FFEE;
+  @include breakpoint($long) {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#warchild {
+  color: #C0FFEE;
+}
+@media (min-width: 500px) and (min-height: 700px) and (max-height: 1000px) and (orientation: portrait) and (monochrome) {
+  #warchild {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+				</section>
+
+
+        <section id="breakpoint-advanced-intro">
+          <h2>Going Deeper</h2>
+          <blockquote class="bodhi">
+            <p>The little hand says it's time to rock and roll.</p>
+            <b>Bodhi</b>
+          </blockquote>
+        </section>
+
+        <section>
+          <section id="breakpoint-crazy-advanced-fallbacks-original-file">
+            <h2>Fallbacks</h2>
+            <p>We need to account for under-powered browsers too, and we have a few different ways to handle that</p>
+            <p>Use a fallback selector in the same stylesheet.</p>
+            <div class="point-down">
+              <pre><code class="language-scss">$breakpoint-no-query-fallbacks: true;
+$touch: pointer coarse, 'no-query' '.touch';</code></pre>
+            </div>
+            <pre class="half point-right"><code class="language-scss">#freefall {
+  color: #C0FFEE;
+  @include breakpoint($touch) {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">#freefall { color: #C0FFEE; }
+
+@media (pointer: coarse) {
+  #freefall {
+    color: #BADA55;
+  }
+}
+.touch #freefall { color: #BADA55; }</code></pre>
+          </section>
+          <section id='no-touching' data-state="orange">
+            <img src="images/no-touching.gif" alt='No Touching' >
+          </section>
+          <section id="breakpoint-crazy-advanced-fallbacks-separate-file">
+            <h2>Fallbacks in Separate Styesheets</h2>
+            <p>Create separate stylesheets for your fallbacks.</p>
+            <div class="">
+              <pre><code class="language-scss">// _my-partial.scss
+$we-have-mqs: 500px, 'no-query' '.no-mq';
+#freefall {
+  color: #C0FFEE;
+  @include breakpoint($we-have-mqs) { color: #BADA55; }
+}</code></pre>
+            </div>
+            <pre class="half point-up"><code class="language-scss">// main.scss
+@import "my-partial";</code></pre>
+            <pre class="half point-up"><code class="language-scss">// fallback.scss
+$breakpoint-no-queries: true; // Will not print media queries
+$breakpoint-no-query-fallbacks: true; // Will print No Query Fallbacks
+@import "my-partial";</code></pre>
+          </section>
+          <section id="breakpoint-crazy-advanced-fallbacks-separate-file-css">
+            <h2>Fallbacks in Separate Styesheets</h2>
+            <p>compiled css</p>
+            <pre class="half"><code class="language-scss">// main.css
+#freefall { color: #C0FFEE; }
+@media (min-width: 500px) {
+  #freefall {
+    color: #BADA55;
+  }
+}</code></pre>
+            <pre class="half"><code class="language-scss">// fallback.css
+#freefall { color: #C0FFEE; }
+
+.we-have-mqs #freefall {
+  color: #BADA55;
+}</code></pre>
+          </section>
+
+          </section>
+
+				<!-- <section>
+					<section id="breakpoint-advanced-media">
+						<h2>Explicit Media Type</h2>
+						<p>Breakpoint defaults to no specific media type, but you have total control over this too!</p>
+						<pre><code class="language-scss">$search-warrant: (print) (monochrome);
+#busted {
+  color: #C0FFEE;
+  @include breakpoint($search-warrant) {
+    color: #BADA55;
+  }
+}
+// CSS
+#busted {
+  color: #C0FFEE;
+}
+@media print and (monochrome) {
+  #busted {
+    color: #BADA55;
+  }
+}
+</code></pre>
+					</section>
+				</section> -->
+
+				<!-- <section id="breakpoint-advanced-or">
+					<h2><span class="fancy">&ldquo;</span>Or<span class="fancy">&rdquo;</span> Media Queries</h2>
+					<p>Separate test groups with a comma to create 'or' queries.</p>
+					<pre><code class="language-scss">$or: (500px) (max-height 1200px), 600px 700px;
+#this-or-that {
+  color: #C0FFEE;
+  @include breakpoint($or) {
+    color: #BADA55;
+  }
+}
+// CSS
+#this-or-that {
+color: #C0FFEE;
+}
+@media (min-width: 500px) and (max-height: 1200px), (min-width: 600px) and (max-width: 700px) {
+  #this-or-that {
+    color: #BADA55;
+  }
+}
+</code></pre>
+				</section> -->
+
+
+				<section>
+					<section id="breakpoint-advanced-resolution">
+						<h2>Resolution</h2>
+						<p>We prefer to use the dppx standard resolution unit, but we have you covered with fallbacks.</p>
+						<p><a href="http://www.w3.org/TR/css3-values/#resolution">W3C resolution units</a></p>
+						<pre><code class="language-scss">$resolution: resolution 192dpi; // dots per inch
+$resolution-standard: resolution 2dppx; // dots per ‘px’ unit
+#resolution {
+  color: #C0FFEE;
+  @include breakpoint($resolution) {
+    color: #BADA55;
+  }
+}
+#resolution {
+  color: #C0FFEE;
+  @include breakpoint($resolution-standard) {
+    color: #BADA55;
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-advanced-resolution-css">
+						<h2>Resolution</h2>
+						<p>compiled css</p>
+						<pre><code class="language-scss">#resolution { color: #C0FFEE; }
+
+@media (resolution: 192dpi), (-webkit-device-pixel-ratio: 2), (-moz-device-pixel-ratio: 2) {
+  #resolution { color: #BADA55; }
+}
+
+// dppx
+#resolution { color: #C0FFEE; }
+@media (resolution: 2dppx), (-webkit-device-pixel-ratio: 2), (-moz-device-pixel-ratio: 2), (resolution: 192dpi) {
+  #resolution { color: #BADA55; }
+}
+</code></pre>
+					</section>
+				</section>
+
+				</section>
+
+
+
+
+
+				<section>
+					<section id="breakpoint-crazy-advanced-intro">
+						<h2>Crazy Advanced Uses</h2>
+						<blockquote class="bodhi">
+							<p>100% Pure Adrenaline</p>
+							<b>Bodhi</b>
+						</blockquote>
+					</section>
+				</section>
+
+
+
+
+				<section>
+					<section id="breakpoint-crazy-advanced-context">
+						<h2>Breakpoint Context</h2>
+						<p>Grab the context of a media query from within a mixin or function. </p>
+						<pre><code class="language-scss">$basic: 700px (height 600px 800px) (orientation landscape);
+
+#context {
+  @include breakpoint($basic) {
+    content: 'min-height:' breakpoint-get-context('min-height');
+    content: 'orientation:' breakpoint-get-context('orientation');
+    content: 'max-width: ' breakpoint-get-context('max-width');
+  }
+}</code></pre>
+					</section>
+					<section id="breakpoint-crazy-advanced-context-css">
+						<h2>Breakpoint Context</h2>
+						<p>Context</p>
+						<pre><code class="language-scss">@media (min-width: 700px) and (min-height: 600px) and (max-height: 800px) and (orientation: landscape) {
+  #context {
+    content: "min-height:" 600px;
+    content: "orientation:" landscape;
+    content: "max-width: " false;
+  }
+}</code></pre>
+					</section>
+				</section>
+				<section id="utah-whoa">
+					<blockquote class="utah">
+						<img src="images/utah-thumb.gif" alt="whoa.">
+						<!-- <p>Nice Board. It looks like a '57 Chevy I used to own.</p> -->
+						<b>Johnny Utah</b>
+					</blockquote>
+				</section>
+
+
+
+
+
+				<section>
+					<section id="singularity">
+						<h1 class="section-marker">IV</h1>
+						<h2>Singularity</h2>
+            <p><a href="http://http://singularity.gs/">singularity.gs</a></p>
+						<footer>Team Sass: Scott Kellum (@scottkellum) &amp; Sam Richard (@snugug)</footer>
+					</section>
+
+
+
+
+          <section id="order-constraint">
+            <h2>Why Use Grids at All?</h2>
+            <h3>Grids give us:</h3>
+            <br/>
+            <h4 class="fragment">Proportion</h4>
+            <h4 class="fragment">Order</h4>
+            <h4 class="fragment">Constraint</h4>
+            <h4 class="fragment">The best grids are specific to your content and your design, as they are an extension of both.</h4>
+          </section>
+          <section id="web-grids" data-state="grids-suck">
+            <h2>Why Grids Suck on the Web</h2>
+            <div class="shaded fragment">
+              <h3 class="">The grid should not drive the design.</h3>
+              <h3 class="fragment">They're often used as a technical aid, rather than a creative tool.</h3>
+              <h3 class="fragment yo">All the columns are the same size.</h3>
+            </div>
+          </section>
+          <section id="grid-design">
+            <h2>Grid Design 800 Years Ago</h2>
+            <p>Villard De Honnecourt, 13th Century</p>
+            <img class="transparent" src="images/grids-book-1.png" alt="grid design">
+          </section>
+          <section id="grid-design-2">
+            <h2>Grid Design 800 Years Ago</h2>
+            <img class="transparent" src="images/grids-book-2.png" alt="grid design">
+          </section>
+          <section id="grid-design-3">
+            <h2>Grid Design 800 Years Ago</h2>
+            <img class="transparent" src="images/grids-book-3.png" alt="grid design">
+          </section>
+
+
+
+
+
+					<!-- <section id="street-grids" data-source="http://tedpak.com/2013/03/31/what-new-york-does-right" data-cite="Ted Pak">
+						<img src="images/street_grids.png" alt="Street Grids of NYC, Philly, DC, and Toronto">
+					</section> -->
+
+				</section>
+
+<!--         <section id="box-model" data-state="orange">
+          <img class="transparent" src="images/boxmodel.png" alt="Box Model">
+        </section>
+
+				<section id="border-box">
+					<h2>Let's Cheat at CSS</h2>
+
+					<pre><code class="language-scss">// We can import all of Compass safely because it doesn't write any CSS.
+@import 'compass';
+
+// We switch our box model to Border Box.
+// From [Paul Irish](http://paulirish.com/2012/box-sizing-border-box-ftw/)
+*, *:before, *:after {
+  @include box-sizing('border-box');
+}</code></pre>
+				</section>
+ -->
+        <section id="singularity-install">
+            <h2>Using Singularity</h2>
+            <h3><a href="https://github.com/team-sass/singularity">github.com/team-sass/singularity</a></h3>
+            <pre class="fragment"><code class="language-scss">// command line
+> gem install singularitygs</code></pre>
+            <pre class="fragment"><code class="language-scss">// compass.rb
+require 'singularitygs'</code></pre>
+            <pre class="fragment"><code class="language-scss">// working sass file
+@import 'singularitygs';</code></pre>
+          </section>
+
+				<section id="symmetric-grids-code">
+					<h2>Symmetric Grids</h2>
+
+					<pre><code class="language-scss">// Symmetric grids are expressed as a single number denoting how many equal sized columns you'd like.
+
+$grids: 12;
+$gutters: 1/3;</code></pre>
+					<img src="images/symmetric.png" alt="Symmetric Grid">
+        </section>
+
+        <section>
+            <h2>Asymmetric Grids</h2>
+            <p>Grids where the columns are not the same size</p>
+            <p class="fragment">Custom grids for each design allow for more unique designs to better highlight your content</p>
+            <p class="fragment"><a href="github.com/team-sass/singularity-extras">Singularity Extras</a> is very useful when working with asymmetric grids</p>
+          </section>
+          <section>
+            <h2>Types of Asymmetric Grids</h2>
+            <p class="fragment small"><b>Custom</b> - Any asymmetric grid created to suit your needs</p>
+            <p class="fragment small"><b>Compound</b> - Created by combining symmetric grids</p>
+            <p class="fragment small"><b>Ratio</b> - Each column is derived from the previous according to a ratio</p>
+            <p class="fragment small"><b>Ratio Spiral</b> - Columns are generated based on an overlaid spiral</p>
+            <p class="fragment small"><b>Snap</b> - Asymmetric grid that takes into account an overlaid symmetric grid's gutters</p>
+          </section>
+          <section>
+            <h2>Custom Grid</h2>
+            <pre><code class="language-scss">// List of column width in relation to each other
+$grids: 5 2 3 3 7 9;</code></pre>
+            <img src="images/custom.png">
+          </section>
+          <section>
+            <h2>Compound Grid</h2>
+            <pre><code class="language-scss">// List of symmetric grids to compound together
+$grids: compound(3, 4);</code></pre>
+            <img src="images/compound.png">
+          </section>
+          <section>
+            <h2>Ratio Grid</h2>
+            <pre><code class="language-scss">// Ratio and number of columns
+$grids: ratio(golden(), 4);</code></pre>
+            <img src="images/ratio.png">
+          </section>
+          <section>
+            <h2>Ratio Spiral Grid</h2>
+            <pre><code class="language-scss">// Number of columns and ratio
+$grids: ratio-spiral(5, golden());</code></pre>
+            <img src="images/spiral.png">
+          </section>
+          <section>
+            <h2>Snap Grid</h2>
+            <pre><code class="language-scss">// Asymmetric grid and the gutter width of the grid to snap to.
+$grids: snap(2 4 4 2, 1/3);</code></pre>
+            <img src="images/snap.png">
+          </section>
+
+
+
+
+
+
+
+
+			<section>
+				<section id="semantic-grid">
+					<h2>Semantic Grids</h2>
+					<p>Singularity is what we like to call a semantic grid system, meaning that instead of grid classes being generated that you then apply to your HTML, the grid is stored entirely within your CSS and applied directly to the element you want to use it on.</p>
+				</section>
+				<section id="grid-span-html">
+					<h2>Spanning The Grid - HTML</h2>
+
+					<pre><code class="language-markup">&lt;body&gt;
+  &lt;div class="main"&gt;Main Section&lt;/div&gt;
+  &lt;div class="first"&gt;First Section&lt;/div&gt;
+  &lt;div class="second"&gt;Second Section&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+				</section>
+				<section id="grid-span-scss">
+					<h2>Spanning The Grid - Sass</h2>
+
+					<pre><code class="language-scss">// Simply pass the number of columns you'd like to span and what column you'd like to start from.
+
+$grids: 2 8 2;
+$gutters: 1/3;
+
+.first {
+  @include grid-span(1, 1);
+}
+
+.main {
+  @include grid-span(1, 2);
+}
+
+.second {
+  @include grid-span(1, 3);
+}</code></pre>
+				</section>
+				<section id="grid-span-display">
+					<h2>Spanning The Grid - Display</h2>
+					<img src="images/grid-span.png" alt="Grid Span display">
+				</section>
+			</section>
+
+			<section>
+				<section id="responsive-grids">
+					<h2>Responsive Grid Context - Sass</h2>
+
+					<pre><code class="language-scss">// add-grid allows you to automatically change your global Grid Context at various breakpoints
+
+$grids: 12;
+$grids: add-grid(2 8 2 at 700px);
+$gutters: 1/3;
+
+.first {
+  @include grid-span(3, 4);
+
+  @include breakpoint(700px) {
+    @include grid-span(1, 1);
+  }
+}
+
+.main {
+  @include grid-span(6, 7);
+
+  @include breakpoint(700px) {
+    @include grid-span(1, 2);
+  }
+}
+
+.second {
+  @include grid-span(3, 1);
+
+  @include breakpoint(700px) {
+    @include grid-span(1, 3);
+  }
+}</code></pre>
+				</section>
+				<section id="responsive-grids-display">
+					<h2>Responsive Grid Context - Display</h2>
+
+					<video src="videos/rwd-grid-context.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' autoplay loop></video>
+				</section>
+			</section>
+			<!-- <section>
+				<section id="nested-grid-html">
+					<h2>Nested Grids - HTML</h2>
+
+					<pre><code class="language-markup">&lt;body&gt;
+  &lt;div class="main"&gt;
+    &lt;div class="one"&gt;One&lt;/div&gt;
+    &lt;div class="two"&gt;Two&lt;/div&gt;
+    &lt;div class="three"&gt;
+      &lt;div class="a"&gt;Three A&lt;/div&gt;
+      &lt;div class="b"&gt;Three B&lt;/div&gt;
+      &lt;div class="c"&gt;Three C&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="four"&gt;Four&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="first"&gt;First Section&lt;/div&gt;
+  &lt;div class="second"&gt;Second Section&lt;/div&gt;
+&lt;/body&gt;</code></pre>
+				</section>
+				<section id="nested-grid-outer-scss">
+					<h2>Nested Grids (Outer Grid) - Sass</h2>
+
+					<pre><code class="language-scss">$grids: 2 8 2;
+$gutters: 1/3;
+
+.first {
+  @include grid-span(1, 1);
+}
+
+.main {
+  @include grid-span(1, 2);
+}
+
+.second {
+  @include grid-span(1, 3);
+}
+</code></pre>
+				</section>
+				<section id="nested-grid-outer-display">
+					<h2>Nested Grid (Outer Grid) - Display</h2>
+					<img src="images/nest-outer.png" alt="Nested Grids, Outer Grid">
+				</section>
+				<section id="nested-grid-inner-1-scss">
+					<h2>Nested Grids (First Nesting) - Sass</h2>
+
+					<pre><code class="language-scss">@include layout(8) {
+	.one {
+	  @include grid-span(1, 1);
+	}
+
+	.two {
+	  @include grid-span(1, 8);
+	}
+
+	.three {
+	  @include grid-span(6, 2);
+	}
+
+	.four {
+	  @include grid-span(2, 4);
+	  clear: both;
+	 }
+}</code></pre>
+				</section>
+				<section id="nested-grid-inner-1-display">
+					<h2>Nested Grid (First Nesting) - Display</h2>
+					<img src="images/nest-inner-1.png" alt="Nested Grids, First Nesting">
+				</section>
+				<section id="nested-grid-inner-2-scss">
+					<h2>Nested Grids (Second Nesting) - Sass</h2>
+
+					<pre><code class="language-scss">@include layout(6) {
+	.a {
+	  @include grid-span(2, 3);
+	}
+
+	.b {
+	  @include grid-span(2, 5);
+	}
+
+	.c {
+	  @include grid-span(2, 1);
+	}
+}</code></pre>
+				</section>
+				<section id="nested-grid-inner-2-display">
+					<h2>Nested Grid (Second Nesting) - Display</h2>
+					<img src="images/nest-inner-2.png" alt="Nested Grids, Second Nesting">
+				</section>
+			</section> -->
+
+
+				<section data-state="sky-circle">
+			<!-- 		<section id="whoa">
+						<h1 class="section-marker">V</h1>
+						<h2>Whoa.</h2>
+					</section> -->
+					<section id="thank-you">
+						<h1>Thank You</h1>
+            <div class="screen">
+  						<h2>Team Sass</h2>
+              <ul>
+    						<li class="no-dash"><a href="http://breakpoint-sass.com">breakpoint-sass.com</a></li>
+    						<li class="no-dash"><a href="http://http://singularity.gs/">singularity.gs</a></li>
+    						<li class="no-dash"><a href="https://github.com/team-sass">github.com/team-sass</a></li>
+              </ul>
+  						<p>Slides available at</p>
+  						<p><a href="http://canarymason.github.io/managing-rwd-presentation/">canarymason.github.io/managing-rwd-presentation</a></p>
+  						<!-- <blockquote>Stop When it Looks Good.</blockquote> -->
+            </div>
+					</section>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div id="pagecounter"></div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="plugin/prism.js"></script>
+		<script src="js/pages.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+		<!-- Google Analytics -->
+		<!-- <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-40052125-1', 'github.io');
+		  ga('send', 'pageview');
+	</script> -->
+
+
+	</body>
+</html>

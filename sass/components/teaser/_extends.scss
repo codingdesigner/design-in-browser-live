@@ -1,0 +1,11 @@
+//////////////////////////////
+// Teaser Component Extendable Classes
+//////////////////////////////
+
+$teaser-extendables-extended: false !default;
+
+@if not ($teaser-extendables-extended) {
+  // Replace this line with extendable calsses
+}
+
+$teaser-extendables-extended: true;

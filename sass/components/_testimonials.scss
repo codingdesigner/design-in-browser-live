@@ -1,0 +1,66 @@
+//////////////////////////////
+// Testimonials Component
+//
+// The partial and folder structure for this component should be as follows:
+// _testimonials.scss
+// testimonials (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "testimonials/mixins";
+@import "testimonials/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--testimonials set to `true` will output the CSS selectors for TestimonialsComponent
+$output-selectors--testimonials: true !default;
+@if $output-selectors and $output-selectors--testimonials {
+//////////////////////////////
+
+//////////////////////////////
+// @{testimonials}
+// Styling for Testimonials Component
+
+// {testimonials}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{testimonials--teasers}
+// Teasers styling for Testimonials Component
+.testimonials {
+  @extend %vertical-separation;
+  article {
+    @extend %vertical-separation-border;
+    h1 {
+      @extend %article-heading-blue;
+    }
+    footer {
+      @extend %blockquote-footer-extend;
+    }
+    @include breakpoint($bp-testimonials-2col) {
+      border-bottom: none;
+      &:nth-of-type(odd) {
+        @include grid-span(1, 1);
+        clear: both;
+      }
+      &:nth-of-type(even) {
+        @include grid-span(1, 2);
+      }
+      &:nth-of-type(odd):last-of-type {
+        width: 100%;
+      }
+    }
+  }
+}
+// {testimonials--teasers}@
+//////////////////////////////
+
+}

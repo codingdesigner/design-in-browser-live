@@ -1,0 +1,50 @@
+//////////////////////////////
+// Border Component
+//
+// The partial and folder structure for this component should be as follows:
+// _border.scss
+// border (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "border/mixins";
+@import "border/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--border set to `true` will output the CSS selectors for BorderComponent
+$output-selectors--border: true !default;
+@if $output-selectors and $output-selectors--border {
+//////////////////////////////
+
+//////////////////////////////
+// @{border}
+// Styling for Border Component
+
+// {border}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{border--bottom-dashed}
+// Bottom-dashed styling for Border Component
+
+// {border--bottom-dashed}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{border--right-blue}
+// Right-blue styling for Border Component
+
+// {border--right-blue}@
+//////////////////////////////
+
+}

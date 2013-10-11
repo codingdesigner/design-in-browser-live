@@ -1,0 +1,21 @@
+//////////////////////////////
+// Baseline Component Extendable Classes
+//////////////////////////////
+
+$baseline-extendables-extended: false !default;
+
+@if not ($baseline-extendables-extended) {
+  %vertical-separation {
+    @include vertical-separation($extend: false)
+  }
+
+  %vertical-separation-border {
+    @include vertical-separation($vs-margin: em($base-line-height * 2), $vs-divide: em(1px), $vs-bordercolor: $gray-trans);
+  }
+
+  %vertical-separation-small {
+    @include vertical-separation($vs-margin: em($base-line-height * 0.5));
+  }
+}
+
+$baseline-extendables-extended: true;

@@ -1,0 +1,12 @@
+//////////////////////////////
+// Bird-feed Component Mixins
+//////////////////////////////
+
+@mixin bird-feed($extend: $bird-feed-extend) {
+  @if $extend {
+    @extend %bird-feed;
+  }
+  @else {
+    // styles
+  }
+}

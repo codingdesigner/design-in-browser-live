@@ -1,0 +1,42 @@
+//////////////////////////////
+// Menu Component
+//
+// The partial and folder structure for this component should be as follows:
+// _menu.scss
+// menu (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "menu/mixins";
+@import "menu/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--menu set to `true` will output the CSS selectors for MenuComponent
+$output-selectors--menu: true !default;
+@if $output-selectors and $output-selectors--menu {
+//////////////////////////////
+
+//////////////////////////////
+// @{menu}
+// Styling for Menu Component
+
+// {menu}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{menu--site-menu}
+// Site-menu styling for Menu Component
+
+// {menu--site-menu}@
+//////////////////////////////
+
+}

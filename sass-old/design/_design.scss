@@ -1,0 +1,238 @@
+// Create the design for your site below
+// If you're using SMACSS, this is where module, state and theme styles go
+// SITE-WIDE DESIGN -------------------------------------------------------------- */
+
+
+$grids: 2;
+$gutters: 1/10;
+
+.fancy {
+  font-family: $font-serifs;
+}
+
+.session-title {
+  color: $white;
+  // background-color: $orange;
+  border-bottom: 0.125em solid $white;
+  padding: 0.125em;
+  ////////
+  $white-trans-1: rgba($white, 0.1);
+  position: relative;
+  // background-color: $blue;
+  color: $white;
+  border: none;
+  // @include background-image(linear-gradient(left, rgba($black, 0.3%), transparent 30%));
+  &:before, &:after {
+    position: absolute;
+    content: $space;
+    height: 0.5em;
+    top: 100%;
+  }
+  &:before {
+    width: 66%;
+    left: 0;
+    background-color: $blue;
+    @include apply-origin(50% 100%, false);
+    @include transform(rotate(-3deg));
+  }
+  &:after {
+    width: 33%;
+    right: 0;
+    background-color: $orange;
+    @include apply-origin(100% 0%, false);
+    @include transform(rotate(5deg));
+  }
+
+  // @include text-shadow(rgba($black, 0.5) 0 0 8px);
+  // @include filter(drop-shadow(rgba($black, 0.3) 0 2px 4px));
+  #fake-title & {
+    @include text-shadow(rgba(shade($orange, 90%), 0.6) 2px 2px 0px);
+    // @include filter(drop-shadow(rgba(shade($orange, 40%), 0.6) 2px 2px 2px));
+    &:before {
+      width: 50%;
+      @include transform(rotate(-5deg) translateX(-0.25em));
+    }
+    &:after {
+      width: 50%;
+      @include transform(rotate(3deg) translateY(15px) translateX(0.25em));
+    }
+  }
+  .orange & {
+    &:after {
+      background-color: $white;
+    }
+  }
+}
+
+.section-marker {
+  // opacity: 0.7;
+  position: absolute;
+  font-size: ms(20);
+  top: -75%;
+  width: 100%;
+  margin: 0;
+  color: $white-off;
+  @include text-shadow(rgba($black, 0.5) 4px 4px 16px);
+}
+
+.kaboom {
+  @extend .section-marker;
+}
+
+#breakpoint {
+  a {
+    padding: 0.5em;
+    background-color: rgba($black, 0.9);
+  }
+}
+
+#singularity {
+  @extend #breakpoint;
+}
+
+#media-queries-breakpoints-tweakpoints {
+  li {
+    text-align: center;
+  }
+}
+
+#pagecounter {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+  z-index: 100;
+  font-size: .75em;
+  display: none;
+}
+
+.state-background {
+  .orange & {
+    background-color: $orange;
+  }
+  .sky-circle & {
+    background-image: image-url('sky-circle.gif');
+    background-position: 50% 50%;
+    @include background-size(cover);
+  }
+  .grids-suck & {
+    background: {
+      image: image-url('grids-suck.png');
+      position: 50% 50%;
+    }
+    @include background-size(cover);
+  }
+  .even-grid & {
+    background: {
+      image: image-url('equilateral-grid-bg.png');
+      position: 50% 50%;
+    }
+    @include background-size(100% 100%);
+  }
+}
+body {
+  .even-grid & {
+    color: $black;
+  }
+}
+
+.sky-circle {
+  p, li {
+    font-size: ms(1);
+  }
+}
+.screen {
+  background-color: rgba($black, 0.8);
+  padding-bottom: 0.5em ;
+}
+
+.reveal {
+  .progress {
+    span {
+      background-color: $white;
+    }
+  }
+  .controls {
+    opacity: 0;
+  }
+}
+
+%arrow {
+  position: relative;
+  overflow: visible;
+  &:after {
+    position: absolute;
+    content: $space;
+    width: 0;
+    height: 0;
+    left: 1em;
+    top: 100%;
+    border: {
+      width: 1em 1em 0 1em;
+      style: solid;
+      color: rgba($black, 0.5) $transparent $transparent $transparent;
+    }
+  }
+}
+
+.point-down {
+  @extend %arrow;
+}
+.point-right {
+  @extend %arrow;
+  &:after {
+    top: 1em;
+    left: 100%;
+    border: {
+      width: 1em 0 1em 1em;
+      color: $transparent $transparent $transparent rgba($black, 0.5);
+    }
+  }
+}
+.point-up {
+  @extend %arrow;
+  &:after {
+    top: auto;
+    bottom: 100%;
+    border: {
+      width: 0 1em 1em 1em;
+      color: $transparent $transparent rgba($black, 0.5) $transparent;
+    }
+  }
+}
+
+
+.half {
+  &:nth-of-type(1) {
+    @include grid-span(1, 1);
+  }
+  &:nth-of-type(2) {
+    @include grid-span(1, 2);
+  }
+  &[class*="point"] {
+    overflow: visible;
+  }
+  pre {
+    &[class*="point"] {
+      overflow: visible;
+    }
+  }
+}
+
+.shaded {
+  background-color: $black-trans;
+  padding: 0.5em;
+}
+
+.yo {
+  // background-color: $black-trans;
+  font-weight: bold;
+}
+
+.section-marker {
+  ~ footer {
+    position: absolute;
+    bottom: -4em;
+    text-align: center;
+    width: 100%;
+  }
+}

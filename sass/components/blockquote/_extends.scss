@@ -1,0 +1,22 @@
+//////////////////////////////
+// Blockquote Component Extendable Classes
+//////////////////////////////
+
+$blockquote-extendables-extended: false !default;
+
+@if not ($blockquote-extendables-extended) {
+  %blockquote-base-extend {
+    @include blockquote-base(false);
+  }
+
+  %blockquote-quote-extend {
+    @extend %blockquote-base-extend;
+    @include blockquote-quote(false);
+  }
+
+  %blockquote-footer-extend {
+    @include blockquote-footer(false);
+  }
+}
+
+$blockquote-extendables-extended: true;

@@ -1,0 +1,81 @@
+//////////////////////////////
+// Social-link Component
+//
+// The partial and folder structure for this component should be as follows:
+// _social-link.scss
+// social-link (folder)
+//   _mixins.scss
+//   _extends.scss
+//
+// Automatic Sass parsing is done through special comment blocks
+//  - Start styling block for base component: @{component}
+//  - End styling block for base component:   {component}@
+//
+//  - Start styling block for specific component configuration: @{component--configuration}
+//  - End styling block for specific component configuration:   {component--configuration}@
+//////////////////////////////
+
+@import "social-link/mixins";
+@import "social-link/extends";
+
+//////////////////////////////
+// Having $output-selectors and $output-selectors--social-link set to `true` will output the CSS selectors for Social-linkComponent
+$output-selectors--social-link: true !default;
+@if $output-selectors and $output-selectors--social-link {
+//////////////////////////////
+
+//////////////////////////////
+// @{social-link}
+// Styling for Social-link Component
+  .social-media {
+    @extend %vertical-separation-small;
+    .section-title {
+      @extend %h3;
+      @extend %heading-to-label;
+    }
+    ul {
+      @extend %inline-list;
+      li {
+        @extend %icon-inline-list;
+      }
+    }
+    a {
+      @extend %link-unset-borders-extend;
+    }
+  }
+// {social-link}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{social-link--facebook}
+// Facebook styling for Social-link Component
+
+// {social-link--facebook}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{social-link--twitter}
+// Twitter styling for Social-link Component
+
+// {social-link--twitter}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{social-link--flickr}
+// Flickr styling for Social-link Component
+
+// {social-link--flickr}@
+//////////////////////////////
+
+
+//////////////////////////////
+// @{social-link--foursquare}
+// Foursquare styling for Social-link Component
+
+// {social-link--foursquare}@
+//////////////////////////////
+
+}

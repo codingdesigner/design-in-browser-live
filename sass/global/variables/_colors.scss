@@ -1,0 +1,117 @@
+// COLORS
+$black              : #1f1f1f;
+$white              : #fefefe;
+
+$orange             : #f08c49;
+$blue               : #13769D;
+$blue-slate         : #2B3542;
+$green              : #A9CA98;
+
+$orange-chocolate   : #311B03;
+$gray               : mix($black, $white);
+$gray-dark          : #2d2d2d;
+$gray-med           : #3d3d3d;
+$gray-light         : #878785;
+$gray-lighter       : #ECECEC;
+
+/// code
+$yellow             : #f6f148;
+$green              : #cdf196;
+$purple             : #c3a4ff;
+/// code
+
+$cs-primary         : $orange;
+
+//////////////////////////////
+// derived colors
+$gray-extra-light   : adjust-color($gray-light, $lightness: 30%);
+$cool-white         : tint($blue, 95%);
+$orange-dark        : adjust-color($orange, $lightness: -10%);
+$orange-darker      : adjust-color($orange, $lightness: -15%);
+$orange-light       : tint($orange, 55%);;
+$blue-dark          : adjust-color($blue, $lightness: -10%);
+$gray-trans         : rgba($gray-light, 0.3);
+$blue-slate-mult    : blend-multiply(rgba($blue-slate, 0.2), $blue-slate);
+//////////////////////////////
+
+//////////////////////////////
+// Color Stacks
+//
+// We can utilize [Color Schemer](https://github.com/scottkellum/color-schemer)
+//   to build us awesome color guides.
+//////////////////////////////
+// Primary color, can be any color you can use in CSS, plus CMYK from Color Schemer
+$cs-scheme:             accented-analogic;
+// Options: mono, complement, triad, tetrad, analogic, accented-analogic
+$cs-hue-offset:         35;
+// Options: 0-100;
+$cs-brightness-offset:  10;
+// Options: 0-100;
+$cs-color-model:        ryb;
+// Options: rgb, ryb
+
+
+//////////////////////////////
+// Color Scheme Colors
+$primary-tints           : tint-stack($orange);
+$primary-shades          : shade-stack($orange);
+$secondary-tints         : tint-stack($blue);
+$secondary-shades        : shade-stack($blue);
+$tertiary-tints          : tint-stack($blue-slate);
+$tertiary-shades         : shade-stack($blue-slate);
+$quaternary-tints        : tint-stack($green);
+$quaternary-shades       : shade-stack($green);
+$black-tints             : tint-stack($black);
+$white-shades            : shade-stack($white);
+//////////////////////////////
+
+
+// link colors
+$cs-link-normal: $blue;
+$cs-link-hover: $orange;
+$cs-link-active: $orange;
+$cs-link-visited: $blue;
+$cs-link-focus: $orange;
+$cs-link-border-normal: $blue;
+$cs-link-border-hover: $orange;
+$cs-link-border-active: $orange;
+$cs-link-border-visited: $blue;
+$cs-link-border-focus: $orange;
+
+//////////////////////////////
+// Background Colors
+//////////////////////////////
+$cs-background: $cool-white;
+
+//////////////////////////////
+// Text Colors
+//////////////////////////////
+$cs-text-dark: $black;
+$cs-text-light: $white;
+$cs-text: $cs-text-dark;
+
+
+//////////////////////////////
+// Border Colors
+//////////////////////////////
+$cs-border: $gray;
+
+//////////////////////////////
+// Status Colors
+//////////////////////////////
+$cs-status-status  : nth($quaternary-tints, 4);
+$cs-status-warning : nth($secondary-tints, 6);
+$cs-status-error   : nth($primary-tints, 5);
+
+//////////////////////////////
+// Component defaults
+//////////////////////////////
+// Buttons
+$cs-button-color-default: $gray;
+//////////////////////////////
+// Messages
+$cs-message-text-color-default: nth($secondary-tints, 3);
+$cs-message-bkg-color-default: $cs-status-status;
+//////////////////////////////
+
+

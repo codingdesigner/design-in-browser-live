@@ -1,0 +1,45 @@
+.panel-twocol-nested-right-twocol {
+  // [class^="panel-"] { @include debug-outline(); }
+  .panel-one {
+    @include breakpoint($bp-episode-side-menu) {
+      @include float(left);
+      width: $episode-side-menu-width;
+      padding-right: $gutter-width;
+    }
+  }
+  .panel-wrapper {
+    @include breakpoint($bp-episode-side-menu) {
+      @include clearfix;
+      margin-left: $episode-side-menu-width + $gutter-width;
+      padding-left: 5%;
+    }
+  }
+  .inner-wrapper {
+    @include breakpoint($bp-episode-split-content) {
+      font-size: 0;
+      margin-right: $column-width + $gutter-width;
+    }
+  }
+  .panel-three {
+    @include breakpoint($bp-episode-split-content) {
+      @include inline-block;
+      font-size: $base-font-size;
+      width: 100%;
+      vertical-align: top;
+    }
+  }
+  .panel-four {
+    width: $column-width;
+    margin: 0 auto;
+    @include breakpoint($bp-episode-split-content) {
+      @include inline-block;
+      font-size: $base-font-size;
+      margin-left: $gutter-width;
+      margin-right: -$column-width - $gutter-width;
+      vertical-align: top;
+    }
+  }
+  .panel-five {
+    clear: both;
+  }
+}
